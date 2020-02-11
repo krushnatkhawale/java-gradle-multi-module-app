@@ -1,0 +1,28 @@
+buildscript {
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies{
+		classpath "com.example:custom-gradle-plugin:0.0.2-SNAPSHOT"
+	}
+}
+
+allprojects {
+	group 'play.with.integration'
+}
+
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'maven'
+	apply plugin: 'myGradleTask'
+
+	sourceCompatibility = 1.8
+	targetCompatibility = 1.8
+
+	repositories {
+		mavenCentral()
+	}
+
+	task listAllDependencies(type: DependencyReportTask){}
+}
