@@ -9,7 +9,7 @@ buildscript {
 }
 
 allprojects {
-	group 'play.with.integration'
+	group 'com.gradle.practice'
 }
 
 subprojects {
